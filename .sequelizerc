@@ -1,0 +1,7 @@
+'use strict';
+let path = require('path');
+module.exports = {
+    'config': path.resolve('back-end/config', 'config.js'),
+    'models-path': path.resolve('back-end', 'models'),
+    'migrations-path': path.resolve('back-end', 'migrations')
+};

@@ -1,0 +1,12 @@
+# Created by .ignore support plugin (hsz.mobi)
+/node_modules/
+/yarn.lock
+.idea/
+/front-end/static-pages/
+/front-end/webApp/build/
+/.env
+/logs/
+/yarn-error.log
+/package-lock.json
+/dist/
+/back-end/tests/db/test-db.sqlite

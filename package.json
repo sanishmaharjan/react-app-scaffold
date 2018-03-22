@@ -1,0 +1,111 @@
+{
+    "name": "React-App-scaffold",
+    "version": "0.0.1",
+    "description": "React node app scaffold",
+    "repository": "https://github.com/sanishmaharjan/react-app-scaffold.git",
+    "license": "MIT",
+    "NODE_PATH": "./front-end",
+    "scripts": {
+        "server:start:dev": "pm2 start server/process/development.json",
+        "server:start:production": "pm2 start server/process/production.json",
+        "server:stop": "pm2 delete all",
+        "server:log": "pm2 logs",
+        "server:monitor": "pm2 monit",
+        "migrate:create": "sequelize migration:create --name",
+        "migrate:up": "sequelize db:migrate --env runtime",
+        "migrate:down": "sequelize db:migrate:undo --env runtime",
+        "migrate:test": "sequelize db:migrate --env test",
+        "test:seed:generate": "sequelize seed:generate --seeders-path back-end/tests/testDatas/seeders --name",
+        "test:db:clenup": "sequelize db:seed --seed dbCleanUp.js --seeders-path back-end/tests/testDatas --env test",
+        "test:db:seed": "sequelize db:seed:all --seeders-path back-end/tests/testDatas/seeders --env test",
+        "test:db:init": "yarn test:db:clenup && yarn migrate:test && yarn test:db:seed",
+        "test:backEnd": "yarn test:db:init && NODE_PATH=./back-end NODE_ENV=test mocha --recursive back-end/tests/testFiles",
+        "webpack": "webpack -wd",
+        "code:format": "prettier --find-config-path --write 'front-end/**/*.js' 'front-end/**/*.jsx' 'back-end/**/*.js' '!front-end/**/vendor/**' '!front-end/**/build/**'",
+        "build": "webpack -p",
+        "test:frontEnd": "NODE_PATH=./front-end jest --testPathIgnorePatterns dist/ --testPathPattern front-end/ --notify",
+        "test:coverage": "NODE_PATH=./front-end jest --testPathIgnorePatterns dist/ --testPathPattern front-end/ --coverage",
+        "test:all": "yarn test:backEnd && yarn test:frontEnd"
+    },
+    "babel": {
+        "presets": [
+            "react",
+            [
+                "env",
+                {
+                    "targets": {
+                        "node": "current"
+                    }
+                }
+            ],
+            "stage-2"
+        ]
+    },
+    "jest": {
+        "transform": {
+            ".*": "jest-css-modules"
+        },
+        "setupFiles": [
+            "raf/polyfill",
+            "./.jest.js"
+        ],
+        "snapshotSerializers": [
+            "enzyme-to-json/serializer"
+        ]
+    },
+    "devDependencies": {
+        "axios-mock-adapter": "^1.10.0",
+        "babel-cli": "^6.26.0",
+        "babel-eslint": "^8.0.2",
+        "babel-loader": "^7.1.2",
+        "babel-preset-env": "^1.6.1",
+        "babel-preset-react": "^6.24.1",
+        "babel-preset-stage-2": "^6.24.1",
+        "chai": "^4.1.2",
+        "enzyme": "^3.2.0",
+        "enzyme-adapter-react-16": "^1.1.0",
+        "enzyme-to-json": "^3.2.2",
+        "eslint": "^4.12.1",
+        "eslint-plugin-react": "^7.5.1",
+        "jest": "^21.2.1",
+        "jest-css-modules": "^1.1.0",
+        "mocha": "^5.0.1",
+        "prettier": "1.10.2",
+        "react-test-renderer": "^16.2.0",
+        "sequelize-cli": "^4.0.0",
+        "sqlite3": "^3.1.13",
+        "supertest": "^3.0.0",
+        "unit.js": "^2.0.0",
+        "webpack": "^3.9.1",
+        "yarn": "^1.3.2"
+    },
+    "dependencies": {
+        "axios": "^0.17.1",
+        "babel-polyfill": "^6.26.0",
+        "basic-auth": "^2.0.0",
+        "dotenv": "^4.0.0",
+        "express": "^4.13.1",
+        "express-ctrlr": "0.0.3",
+        "express-handlebars": "^2.0.1",
+        "express-session": "^1.11.3",
+        "formidable": "^1.0.17",
+        "fs-extra": "^0.22.1",
+        "lodash": "^4.17.4",
+        "lodash.pickby": "^4.6.0",
+        "moment": "^2.18.1",
+        "node-password-encrypter": "^1.0.0",
+        "pg": "^7.4.1",
+        "pg-hstore": "^2.3.2",
+        "pm2": "^2.8.0",
+        "prop-types": "^15.6.0",
+        "react": "^16.2.0",
+        "react-dom": "^16.2.0",
+        "react-notify": "^3.0.0",
+        "react-router-dom": "^4.2.2",
+        "safe-buffer": "^5.1.1",
+        "sequelize": "^4.35.0",
+        "style-loader": "^0.19.0",
+        "uuid": "^3.2.1",
+        "winston": "^2.3.1"
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "apps": [
+        {
+            "env": {
+                "NODE_PATH": "./back-end"
+            },
+            "name": "production-server",
+            "exec_mode": "cluster",
+            "script": "server/server.js",
+            "instances": 4,
+            "watch": false,
+            "error_file": "logs/err.log",
+            "out_file": "logs/out.log",
+            "merge_logs": true,
+            "log_date_format": "YYYY-MM-DD HH:mm Z"
+        }
+    ]
+}

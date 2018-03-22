@@ -1,0 +1,1 @@
+web: yarn build && yarn migrate:up && yarn server:start:production && yarn server:log
