@@ -1,6 +1,6 @@
 'use strict';
 let express = require('express');
-let mainApplication = require('config/main');
+let mainApplication = require('baseComponents/main');
 let Model = require('baseComponents/model');
 
 global.app = module.exports = express();

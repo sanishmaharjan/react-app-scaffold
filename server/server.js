@@ -2,7 +2,7 @@
  * load modules
  */
 var express = require('express');                           //Express Web Server
-var mainApplication = require("../back-end/config/main");   //load Application
+var mainApplication = require("../back-end/baseComponents/main");   //load Application
 
 let logger = require('../back-end/baseComponents/logger');
 let config = require('../back-end/config/config');
