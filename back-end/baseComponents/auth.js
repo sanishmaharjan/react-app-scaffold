@@ -4,7 +4,6 @@ let auth = require('basic-auth');
 let encrypter = require('node-password-encrypter');
 let logger = require('baseComponents/logger');
 
-let UserService = require('services/userService');
 class Auth {
     /**
      * Authenticate user
@@ -32,8 +31,7 @@ class Auth {
      * @returns {boolean}
      */
     static async login(creds, req) {
-        let user = await UserService.getUserByUserName(creds.name);
-        if (user != null && (await Auth.isValidUser(creds, user))) {
+        if (await Auth.isValidUser(creds)) {
             req.session.userUuid = user.uuid;
             req.session.user = user.userName;
             return true;
@@ -45,13 +43,12 @@ class Auth {
     /**
      * Validate User credential
      * @param creds{object} dataFormat {name: value, pass: value}
-     * @param user {User} user Model
      * @returns {boolean}
      */
-    static async isValidUser(creds, user) {
+    static async isValidUser(creds) {
         let isValidPassword = await encrypter.compare({
             content: creds.pass,
-            encryptedContent: user.password,
+            encryptedContent: 'password',
             salt: user.salt,
             keylen: 64
         });

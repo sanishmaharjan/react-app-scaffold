@@ -75,7 +75,7 @@ var main = {
         /**
          * load controllers
          */
-        var controllerPath = require('path').join(constants.CONTROLLER_PATH);
+        let controllerPath = path.join(constants.CONTROLLER_PATH);
         main.includeFiles(controllerPath);
     },
     /**

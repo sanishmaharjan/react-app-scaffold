@@ -16,7 +16,7 @@ mainApplication.appInit();
  * Create server
  * @type {http.Server}
  */
-app.listen(config.port, function(){
-    logger.info('Application Environment: %s', app.get('env'));
+global.app.listen(config.port, function(){
+    logger.info('Application Environment: %s', global.app.get('env'));
     logger.info('Application listening on port: %s', this.address().port);
 });
