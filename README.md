@@ -30,6 +30,13 @@
 		- **_testFiles_**
 	- **_utilities_**
 - **_front-end_** (Front end react code)
+	- **_components_** (React components)
+	- **_utilities_**
+	- **_webApp_** (root static directory)
+		- **_build_**
+		- **_css_**
+		- **_error_**
+		- **_js_**
 - **_server_** (Node server script)
 	- **_process_**
 		- **_development.js_** (development env server config)
@@ -106,6 +113,9 @@ _**Build frontend**_
 ```bash
 yarn build
 ```
+
+## More Reference
+- [Documentation](documentations/Documentation.md)
 
 # Links
 - DB ORM: http://docs.sequelizejs.com/manual/installation/getting-started.html
