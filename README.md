@@ -118,8 +118,17 @@ yarn build
 - [Documentation](documentations/Documentation.md)
 
 # Links
-- DB ORM: http://docs.sequelizejs.com/manual/installation/getting-started.html
-- Session: https://github.com/expressjs/session
-- Basic Auth: https://www.npmjs.com/package/basic-auth
-- Uuid: https://www.npmjs.com/package/uuid
-- password encrypter: https://www.npmjs.com/package/node-password-encrypter
+- [DB ORM](http://docs.sequelizejs.com/manual/installation/getting-started.html)
+- [Session](https://github.com/expressjs/session)
+- [Basic Auth](https://www.npmjs.com/package/basic-auth)
+- [Uuid](https://www.npmjs.com/package/uuid)
+- [Password Encrypter](https://www.npmjs.com/package/node-password-encrypter)
+- [Assert](http://www.chaijs.com/api/assert/)
+- [Chai-Js](http://www.chaijs.com/api/)
+- [React](https://reactjs.org/docs/hello-world.html)
+- [React-Router](https://reacttraining.com/react-router/web/example/basic)
+- [Jest](https://facebook.github.io/jest/docs/en/getting-started.html)
+- [Jest-Doc](https://facebook.github.io/jest/docs/en/getting-started.html)
+- [enzyme](http://airbnb.io/enzyme/)
+- [snapshot testing](http://facebook.github.io/jest/docs/en/snapshot-testing.html#snapshot-testing-with-jest)
+- [prettier-code-formater](https://prettier.io/docs/en/index.html)

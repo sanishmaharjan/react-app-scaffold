@@ -7,3 +7,5 @@
   - [**Test Data Seeder**](testDataSeeder.md)
   - [**Controller**](controller.md)
   - [**Utilities**](utility.md)
+- **_Front-end_**
+  - [Component](component.md)
